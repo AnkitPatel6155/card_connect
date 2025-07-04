@@ -11,9 +11,19 @@ void main() {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            color: Colors.grey,
             height: 250,
-
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(15.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ]
+            ),
             child: Column(
                 children: [
                   Padding(
@@ -28,7 +38,10 @@ void main() {
                   ),
                   Row(
                     children: [
-                      Image.asset("images/profile.png",height: 100,width: 100,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Image.asset("images/profile.png",height: 100,width: 100,),
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Column(
